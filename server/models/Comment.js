@@ -16,7 +16,7 @@ const commentSchema = new Schema({
 
 // 가상 필드
 
-// 보여주기용 날짜
+// 보여주기용 날짜-
 commentSchema.virtual("displayDate").get(function () {
     
     // 타임스탬프(createdAt) 가공해 보여주기용 날짜 생성
