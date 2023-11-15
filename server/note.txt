@@ -3,18 +3,36 @@
 ######서버 개발 순서 ######
 server 파일
 
-1. models 파일
+1. models 폴더
  1. User.js
  2. Post.js
  3. Comment.js
  4. Likes.js
  5. Following.js
 
-2. middleware 파일
+2. middleware 폴더
  1. auth.js
  2. loginValidator.js
  3. signUpValidator.js
  4. upload.js
+
+3. controller 폴더 (로직 처리)
+ 1. userController - 유저 데이터 처리
+ 2. postController - 게시물 데이터 처리
+ 3. commentController - 댓글 데이터 처리
+ 4. profileController - 프로필 데이터 처리
+
+4. routes 폴더
+ 1. index (메인 라우터)
+ 2. user
+ 3. post
+ 4. comment
+ 5. profile
+
+5. app.js (최상위 모듈)
+
+6. seed.js (테스트 하기 위한 seed data 생성)
+
 
 #########################
 
@@ -151,3 +169,32 @@ middleware 종류
 
 5. 5XX (Server Error)
 - 500 (Internal Server Error) : 내부 서버 오류
+
+------------------------------------------------------------
+231115
+
+○ 컨트롤러 (로직 처리 부분)
+
+컨트롤러 구조
+1. userController - 유저 데이터 처리
+2. postController - 게시물 데이터 처리
+3. commentController - 댓글 데이터 처리
+4. profileController - 프로필 데이터 처리
+
+
+○ 라우터
+- 요청 URL과 적절한 리소스 연결
+
+라우터 구조
+1. index (메인 라우터)
+2. user
+3. post
+4. comment
+5. profile
+
+○ HTTP 요청 메서드 (Request Method)
+
+1. GET - 데이터 읽기 요청
+2. POST - 데이터 생성 요청
+3. PUT - 데이터 수정 요청
+4. DELETE - 데이터 삭제 요청
