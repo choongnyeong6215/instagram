@@ -1,4 +1,4 @@
-const mongoose = require("monggose");
+const mongoose = require("mongoose");
 const User = require("./models/User");
 const Post = require("./models/Post");
 const { mongo } = require("mongoose");
@@ -32,7 +32,7 @@ else {
 async function seedDatabase() {
     try {
         // 데이터베이스 연결
-        await mongoose.connection(MONGODB_URI);
+        await mongoose.connect(MONGODB_URI);
 
         // 생성할 유저 목록
         const users = [
@@ -117,10 +117,10 @@ async function seedDatabase() {
 };
 
 
-// 씨드 데이터 초가화 함수
+// 씨드 데이터 초기화 함수
 async function dropDatabase() {
     try {
-        await mongo.connect(MONGODB_URI);
+        await mongoose.connect(MONGODB_URI);
 
         await mongoose.connection.dropDatabase();       // dropDatabase() : DB 삭제
 

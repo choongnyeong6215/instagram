@@ -3,9 +3,9 @@ const createError = require("http-errors");         // 에러 처리 기능
 const cookieParser = require("cookie-parser");      // 쿠키 수집 기능
 const logger = require("morgan");                   // 통신 기록 저장 및 출력
 const cors = require("cors");                       // CORS 기능 제공
-const indexRouter = requrie("./routes/index");      // 인덱스 Router
+const indexRouter = require("./routes/index");      // 인덱스 Router
 const app = express();                              // 앱 모듈
-const mongoose = requrie("mongoose");               // 몽고 DB용 ODM
+const mongoose = require("mongoose");               // 몽고 DB용 ODM
 const compression = require("compression");         // 압축 기능 제공
 const helmet = require("helmet");                   // 요청 헤더 보안 기능
 require("dotenv").config();                         // 환경변수 사용환경 제공
@@ -58,4 +58,4 @@ app.use((err, req, res, next) => {
 
 
 // 앱 모듈 exports
-module.expors = app;
+module.exports = app;

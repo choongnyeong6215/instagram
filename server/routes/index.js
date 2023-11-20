@@ -4,7 +4,7 @@ const router = express.Router();              // 라우터
 const userRouter = require("./user");         // 하위 라우터 목록
 const postRouter = require("./post");
 const commentRouter = require("./comment");
-const profileRouter = require("./profile");
+const profileRouter = require("./Profile");
 
 const auth = require("../middleware/auth");   // 인증처리 미들웨어
 

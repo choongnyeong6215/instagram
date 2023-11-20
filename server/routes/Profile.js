@@ -16,4 +16,4 @@ router.delete("/:username/unfollow", unfollow);
 
 
 // 라우터 exports
-module.exports = rotuer;
+module.exports = router;

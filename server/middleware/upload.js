@@ -1,7 +1,7 @@
 // 클라이언트가 업로드한 파일 처리
 
 const multer = require("multer");               // 파일 처리 기능 제공
-const path = require("ptah");                   // 경로 관련 기능 제공
+const path = require("path");                   // 경로 관련 기능 제공
 const createError = require("http-errors");     // 에러 처리 기능
 const opts = {};                                // multer option 저장
 

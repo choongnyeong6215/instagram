@@ -28,11 +28,13 @@ server 파일
  3. post
  4. comment
  5. profile
-
+++++++++++++++++++++++++++-----
+-
 5. app.js (최상위 모듈)
 
 6. seed.js (테스트 하기 위한 seed data 생성)
 
+7. 서버 실행 명령어 작성 (package.json)
 
 #########################
 
@@ -198,3 +200,20 @@ middleware 종류
 2. POST - 데이터 생성 요청
 3. PUT - 데이터 수정 요청
 4. DELETE - 데이터 삭제 요청
+
+------------------------------------------------------------
+231120
+
+○ 씨드데이터 생성
+
+- 씨드데이터 생성 명령어
+
+node seed run mongodb://127.0.0.1:27017/instagram
+
+node - node 호출
+seed - seed 파일
+run - seed 파일 생성 (revert : 초기화)
+mongodb - DB 주소
+
+○ 서버 실행 명령어 (개발환경)
+npm run start:watch

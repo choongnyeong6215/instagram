@@ -10,7 +10,6 @@ const {                                             // Post Controller 호출
     unlike
 } = require("../controllers/postController");
 const upload = require("../middleware/upload");     // 파일처리 미들웨어
-const { route } = require("./User");
 
 
 // 라우팅
