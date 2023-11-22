@@ -19,9 +19,9 @@ opts.secretOrKey = process.env.SECRET;
 // JWT 처리전략 생성
 const jwtStrategy = new JwtStrategy(opts, async (payload, done) => {
   try {
-    // payload에 저장된 정보로 유저를 검색한다
+    // payload에 저장된 정보로 유저를 검색
     const user = await User.findById(payload.sub);
-    // Model.findById(id): id로 한개의 도큐먼트를 검색한다
+    // Model.findById(id): id로 한개의 도큐먼트를 검색
 
     // 인증 실패
     if (!user) {

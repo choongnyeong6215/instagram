@@ -6,7 +6,7 @@ const createError = require("http-errors");     // 에러 처리 기능
 
 
 // 미들웨어 선언 및 exports
-module.exports = async (res, req, next) => {
+module.exports = async (req, res, next) => {
     try {
 
         // 이메일 검사
