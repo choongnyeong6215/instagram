@@ -97,8 +97,7 @@ exports.update = async(req, res, next) => {
             access_token
         }
 
-        res.json({user});
-
+        res.json({user}); 
     } catch (error) {
         next(error);
     }
