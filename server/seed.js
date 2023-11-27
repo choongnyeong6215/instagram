@@ -43,7 +43,7 @@ async function seedDatabase() {
                 bio : "나는 대리석 안에서 천사를 보았고 그를 자유롭게 해줄 때까지 조각했다."
             },
             {
-                username : "jons",
+                username : "jobs",
                 name : "Steve jobs",
                 avatar : "jobs.jpeg",
                 bio : "이야 아이폰 많이 좋아졌다."
