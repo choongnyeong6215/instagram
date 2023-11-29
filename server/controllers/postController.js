@@ -201,4 +201,32 @@ exports.like = async(req, res, next) => {
         next(error);
     }
 };
-exports.unlike = async(req, res, next) => {};
+
+exports.unlike = async(req, res, next) => {
+    try {
+        const post = await Post.findById(req.params.id);
+
+        if(!post) {
+            throw new createError.NotFound("Post is not found");
+        }
+
+        // 좋아요한 게시물이 맞는지 확인
+        const liked = await Likes
+            .findOne({user : req.user._id, post : post._id});
+
+        if(liked) {
+
+            await liked.deleteOne();
+
+            post.likesCount--;
+
+            await post.save();      // 변경사항 저장
+        }
+
+        res.json({post});
+
+
+    } catch (error) {
+        next(error);
+    }
+};
