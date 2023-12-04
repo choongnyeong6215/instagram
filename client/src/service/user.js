@@ -47,6 +47,40 @@ export async function SignIn(email, password) {
     if(!res.ok) {
         throw new Error(res/statusText + "Error");
     }
+        
+    return await res.json();
+}
+
+export async function updateProfile(editedProfile) {
+    const res = await fetch(`${server}/users/user`, {
+        method : "PUT",
+        headers : {
+            "Content-Type" : "application/json",
+            "Authorization" : getBearerToken()      // 로그인 토큰 전달
+        },
+        body : JSON.stringify(editedProfile)
+    })
+
+    if(!res.ok) {
+        throw new Error(res.statusText + "Error");
+    }
+
+    return await res.json();
+}
+
+export async function updateAvatar(formData) {
+    const res = await fetch(`${server}/users/user`, {
+        method : "PUT",
+        headers : {
+            // Content-Type 생략 -> formData
+            "Authorization" : getBearerToken()
+        },
+        body : formData
+    })
+
+    if(!res.ok) {
+        throw new Error(res.statusText + "Error");
+    }
 
     return await res.json();
 }
