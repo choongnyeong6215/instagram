@@ -1,45 +1,39 @@
-인스타그램 클론앱 내용 정리
+# 서버 구조
 
-######서버 개발 순서 ######
-server 파일
-
-1. models 폴더
+1. models
  1. User.js
  2. Post.js
  3. Comment.js
  4. Likes.js
  5. Following.js
 
-2. middleware 폴더
+2. middleware
  1. auth.js
  2. loginValidator.js
  3. signUpValidator.js
  4. upload.js
 
-3. controller 폴더 (로직 처리)
+3. controller (로직 처리)
  1. userController - 유저 데이터 처리
  2. postController - 게시물 데이터 처리
  3. commentController - 댓글 데이터 처리
  4. profileController - 프로필 데이터 처리
 
-4. routes 폴더
+4. routes
  1. index (메인 라우터)
  2. user
  3. post
  4. comment
  5. profile
-++++++++++++++++++++++++++-----
--
+
 5. app.js (최상위 모듈)
 
 6. seed.js (테스트 하기 위한 seed data 생성)
 
 7. 서버 실행 명령어 작성 (package.json)
 
-#########################
 
-MERN 스택(조합) 활용
-
+# MERN 스택(조합) 활용
 m : mongodb - db
 e : expressjs - 서버 프레임워크 (node.js 프레임워크)
 r : react - 클라이언트 프레임워크
@@ -50,7 +44,7 @@ mongodb compass : mongodb 클라이언트 프로그램
 URI : mogodb 서버 주소
 
 
-환경설정
+# 환경설정
 1. mongodb 설치
 2. postman 설치 (api 서버 테스트 주소) 아이디 : 구글계정
 3. express 설치
@@ -107,8 +101,9 @@ model : 데이터베이스
 controller : 앱의 로직 처리 부분(api 서버)
 view : 화면 부분
 
-------------------------------------------------------------
+
 231110
+
 
 require : import 개념
 
@@ -131,7 +126,7 @@ header : algorith & token type
 payload : data
 signature : verification
 
-------------------------------------------------------------
+
 231113
 
 ○ middleware
@@ -172,7 +167,7 @@ middleware 종류
 5. 5XX (Server Error)
 - 500 (Internal Server Error) : 내부 서버 오류
 
-------------------------------------------------------------
+
 231115
 
 ○ 컨트롤러 (로직 처리 부분)
@@ -201,7 +196,7 @@ middleware 종류
 3. PUT - 데이터 수정 요청
 4. DELETE - 데이터 삭제 요청
 
-------------------------------------------------------------
+
 231120
 
 ○ 씨드데이터 생성
@@ -218,7 +213,7 @@ mongodb - DB 주소
 ○ 서버 실행 명령어 (개발환경)
 npm run start:watch
 
-------------------------------------------------------------
+
 231124
 
 ○ Following schema
@@ -236,7 +231,7 @@ npm run start:watch
 3. 유저가 특정 유저를 팔로우하는지 여부
 user에 유저가 있고, following에 특정 유저 도큐먼트가 있으면 팔로우 중
 
-------------------------------------------------------------
+
 231127
 
 ○ Following schema
@@ -246,25 +241,3 @@ user에 유저가 있고, following에 특정 유저 도큐먼트가 있으면 �
 following 필드 추출 -> 팔로우 하는 유저 필드
 
 where 객체에  user : 로그인 유저, 팔로우 하는 유저 조건 추가
-
-------------------------------------------------------------
-231129
-
-○ 클라이언트
-
-○ 사용할 패키지
- 1. react-router-Dom
- 2. tailwindcss
-
-○ 구조
- 1. components - 컴포넌트
-
- 2. service (서버 요청 라이브러리)
-  - header.js (헤더 파일)
-  - user.js (유저 요청)
-  - post.js (게시물 관련 요청)
-  - comment.js (댓글 요청)
-  - profile.js (프로필 관련 요청)
-
- 3. utils - 유틸리티 기능 라이브러리
- - validator.js (폼데이터 유효성 검사)
