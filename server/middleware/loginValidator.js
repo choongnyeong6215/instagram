@@ -3,7 +3,7 @@
 const User = require("../models/User");         // User 모델과 데이터 통신
 const {body} = require("express-validator");    // 유효성 검사 기능 제공
 const createError = require("http-errors");     // 에러 처리 기능
-const { create } = require("../models/Comment");
+// const { create } = require("../models/Comment");
 
 
 // 미들웨어 선언 및 exports

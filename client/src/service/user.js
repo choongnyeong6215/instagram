@@ -23,7 +23,7 @@ export async function createUser(newUser) {
     // 응답 객체
     const res = await fetch(`${server}/users`, {
         method : "POST",
-        headeers : {"Content-Type" : "application/json"},   // 현재 리퀘스트 또는 리스폰스의 바디에 들어 있는 데이터가 어떤 타입인지
+        headers : {"Content-Type" : "application/json"},   // 현재 리퀘스트 또는 리스폰스의 바디에 들어 있는 데이터가 어떤 타입인지
         body : JSON.stringify(newUser)
     })
 
@@ -37,7 +37,7 @@ export async function createUser(newUser) {
 }
 
 
-export async function SignIn(email, password) {
+export async function signIn(email, password) {
     const res = await fetch(`${server}/users/login`, {
         method : "POST",
         headers : {"Content-Type" : "application/json"},
@@ -45,7 +45,7 @@ export async function SignIn(email, password) {
     })
 
     if(!res.ok) {
-        throw new Error(res/statusText + "Error");
+        throw new Error(res.statusText + "Error");
     }
         
     return await res.json();

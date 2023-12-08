@@ -30,7 +30,7 @@ module.exports = async (req, res, next) => {
         }
 
         // 아이디 검사
-        const usernameResult = await body("id")
+        const usernameResult = await body("username")
             .trim()
             .isLength({min : 5})                                            // 길이 검사(최소 5글자)
             .isAlphanumeric()                                               // 알파벳 또는 숫자인지 검사
@@ -44,6 +44,8 @@ module.exports = async (req, res, next) => {
                 }
             })
             .run(req);
+
+            console.log(usernameResult);
 
         // 아이디 유효성 검사 실패 처리
         if(!usernameResult.isEmpty()) {
