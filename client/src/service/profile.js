@@ -40,7 +40,7 @@ export async function getProfile(username) {
     return await res.json();
 }
 
-export async function getTimeLine(username) {
+export async function getTimeline(username) {
     const res = await fetch(`${server}/posts/?username=${username}`, {
         headers : {
             "Authorization" : getBearerToken()
