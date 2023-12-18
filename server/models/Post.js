@@ -40,7 +40,7 @@ postSchema.virtual("displayDate").get(function () {
 postSchema.virtual("photoUrls").get(function () {
     // 완성된 사진 url 제공
     const urls = this.photos.map(photoName => {
-        return process.env.FILE_URL + "/photos" + photoName
+        return process.env.FILE_URL + "/photos/" + photoName
     })
 
     return urls;

@@ -32,7 +32,7 @@ function App() {
               <Route path="comments" element={<Comments />} />
             </Route>
             <Route path="profiles/:username">
-              <Route index element={<Profile />} />``
+              <Route index element={<Profile />} />
               <Route path="followers" element={<Followers />} />
               <Route path="following" element={<Following />} />
             </Route>

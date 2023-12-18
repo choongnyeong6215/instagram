@@ -64,6 +64,20 @@ function Profile() {
         />
     ))
 
+    // 모달
+    const modal = (
+        <div
+          className="fixed inset-0 bg-black/[0.2] z-10"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setModalOpen(false)
+            }
+          }}
+        >
+          <PostForm />
+        </div>
+    )
+
     // 대기 상태
     if(!profile) {
         return <Spinner />
@@ -96,9 +110,21 @@ function Profile() {
                     <p className="text-center mt-4">게시물이 없습니다.</p>
                 )}
             </div>
+
+            {/* Modal open button */}
+            <svg
+                className="opacity-40 w-12 fixed right-8 bottom-8 hover:opacity-80 cursor-pointer z-10"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                onClick={() => setModalOpen(true)}
+            >
+                <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
+            </svg>
+
+            {/* Create form */}
+            {modalOpen && modal}
         </>
     )
 }
 
 export default Profile;
-

@@ -6,7 +6,7 @@ thumbnailUrl,
 likesCount,
 commentCount
  }) {
-    console.log(thumbnailUrl);
+    
     const thumbnail = (
         <Link to={`/p/${id}`} className="block h-40 relative">
             {/* 이미지 */}
@@ -16,7 +16,7 @@ commentCount
             />
 
             {/* 이미지 호버시 나타나는 오버레이 */}
-            <div className="absolute inset-0 bg-black/[0.2] opacitiy-0 hover:opacity-100">
+            <div className="absolute inset-0 bg-black/[0.2] opacity-0 hover:opacity-100">
                 <div className="flex flex-col justify-center h-full">
 
                     {/* 좋아요 갯수 */}
