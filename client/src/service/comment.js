@@ -22,7 +22,7 @@ export async function getComments(id) {
     return res.json();
 }
 
-export async function createComment(id, comment) {
+export async function createComment(id, content) {
     const res = await fetch (`${server}/posts/${id}/comments`, {
         method : "POST",
         headers : {
