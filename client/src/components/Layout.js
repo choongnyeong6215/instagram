@@ -11,7 +11,7 @@ function Layout() {
                 <div className="max-w-sm mx-auto px-2 h-10 flex justify-between items-center">
                     
                     {/* 로고 */}
-                    <img className="w-24" src="/images/logo.png" />
+                    <img className="w-24" src="/images/logo.png" alt="logo" />
 
                     {/* 메뉴 */}
                     <ul className="flex items-center">
@@ -50,6 +50,7 @@ function Layout() {
                             <Link to={`/profiles/${user.username}`}>
                                 <img
                                     src={user.avatarUrl}
+                                    alt="avatarUrl"
                                     className="w-8 h-8 object-cover border rounded-full"
                                 />
                             </Link>

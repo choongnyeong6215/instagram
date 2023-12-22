@@ -54,7 +54,7 @@ export async function getTimeline(username) {
     return await res.json();
 }
 
-export async function getFollwers(username) {
+export async function getFollowers(username) {
     const res = await fetch(`${server}/profiles/?followers=${username}`, {
         headers : {
             "Authorization" : getBearerToken()

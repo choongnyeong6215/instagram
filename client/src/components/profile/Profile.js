@@ -40,13 +40,35 @@ function Profile() {
     };
 
     // 팔로우 처리
-    async function handleFollow() {};
+    async function handleFollow() {
+        try {
+            await follow(username);
+
+            setProfile({...profile, isFollowing : true});
+        }catch(error) {
+            alert(error);
+        }
+    };
 
     // 언팔로우 처리
-    async function handleUnFollow() {};
+    async function handleUnFollow() {
+        try {
+            await unfollow(username);
+
+            setProfile({...profile, isFollowing : false});
+        }catch(error) {
+            alert(error);
+        }
+    };
 
     // 로그아웃 처리
-    async function handleSignOut() {};
+    async function handleSignOut() {
+        const confirmed = window.confirm("로그아웃하시겠습니까?");
+
+        if(confirmed) {
+            setUser(null);
+        }
+    };
 
     // 제목 업데이트
     useEffect(() => {
