@@ -33,7 +33,7 @@ function Feed() {
 
             const data = await getFeed(limit, skip);
 
-            // 현재 갖고 있는 게시물에 새로운 게시물 추가
+            // 현재 갖고 있는 게시물에 새로운 게시물 추가+
             const updatedPosts = [...posts, ...data.posts];
 
             setPosts(updatedPosts);
@@ -48,17 +48,66 @@ function Feed() {
 
     // 좋아요 처리
     async function handleLike(id) {
+        try {
+            await likePost(id);
 
+            const updatedPosts = posts.map((post) => {
+                if(post.id === id) {
+                    return {
+                        ...post,
+                        liked : true,
+                        likesCount : post.likesCount + 1
+                    }
+                }
+                return post;
+            })
+
+            setPostCount(updatedPosts);
+
+        } catch(error) {
+            alert(error);
+        }
     };
 
     // 좋아요 취소 처리
     async function handleUnlike(id) {
+        try {
+            await unlikePost(id);
 
+            const updatedPosts = posts.map((post) => {
+                if(post.id === id) {
+                    return {
+                        ...post,
+                        liked : false,
+                        likesCount : post.likesCount - 1
+                    }
+                }
+                return post;
+            })
+
+            setPostCount(updatedPosts);
+            
+        } catch(error) {
+            alert(error);
+        }
     };
 
     // 게시물 삭제 처리
     async function handleDelete(id) {
+        try {
+            await deletePost(id);
 
+            const remainimgPosts = posts.map((post) => {
+                if(id !== post.id) {
+                    return post;
+                }
+            })
+
+            setPosts(remainimgPosts);
+
+        } catch(error) {
+            alert(error);
+        }
     };
 
     // 피드 목록 렌더링
